@@ -1,0 +1,352 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red2\green12\blue75;\red255\green255\blue255;\red44\green44\blue44;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c784\c8235\c36863;\cssrgb\c100000\c100000\c100000;\cssrgb\c22745\c22745\c22745;
+\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\ul \ulc2 Exercise: SELECT Queries\cb1 \ulnone \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs42\fsmilli21333 \cf2 Activity 1\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select all rows and columns from the Exercise table. (64 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Exercise;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 2\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select all rows and columns from the Client table. (500 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Client;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 3\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select all columns from Client where the City is Metairie. (29 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Client\
+WHERE City = "Metairie";\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 4\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Is there a Client with the ClientId '818u7faf-7b4b-48a2-bf12-7a26c92de20c'? (0 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Client\
+WHERE ClientId LIKE '818u7faf-7b4b-48a2-bf12-7a26c92de20c';\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 5\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 How many rows are in the Goal table? (17 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Goal;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 6\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select Name and LevelId from the Workout table. (26 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT Name, LevelID\
+FROM Workout;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 7\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select Name, LevelId, and Notes from Workout where LevelId is 2. (11 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT Name, LevelID, Notes\
+FROM Workout\
+WHERE LevelID = '2';\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 8\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select FirstName, LastName, and City from Client where City is Metairie, Kenner, or Gretna. (77 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT FirstName, LastName, City\
+FROM Client\
+WHERE City = 'Metairie' OR \
+\pard\pardeftab720\li1440\partightenfactor0
+\cf5 \'a0 City = 'Kenner' OR\
+\pard\pardeftab720\li720\partightenfactor0
+\cf5 \'a0\'a0\'a0\'a0\'a0 City = 'Gretna';\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 9\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select FirstName, LastName, and BirthDate from Client for Clients born in the 1980s. (72 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT FirstName, LastName, BirthDate\
+FROM Client\
+WHERE Birthdate > '1980-01-01'\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 10\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Write the query above in a different way.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+If you used BETWEEN, you can't use it again.
+\f2\fs29\fsmilli14667 \
+\ls1\ilvl0
+\f1\fs32 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+If you didn't use BETWEEN, use it!
+\f2\fs29\fsmilli14667 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 The results should be the same as for the previous query, with 72 rows.\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT FirstName, LastName, BirthDate\
+FROM Client\
+WHERE Birthdate BETWEEN '1980-01-01' AND '2010-01-01'\
+ORDER BY BirthDate;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 11\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 How many rows in the Login table have a .gov EmailAddress? (17 rows)\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Login\
+WHERE EmailAddress LIKE "%.gov" -- The % means match anything ending in '.gov'\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 12\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 How many Logins do NOT have a .com EmailAddress? (122 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 \'a0\
+USE PersonalTrainer;\
+SELECT *\
+FROM Login\
+-- The % means match anything without ending in '.com'\
+-- NOT LIKE means match anything unlike \
+WHERE EmailAddress NOT LIKE "%.com" \
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 13\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select first and last name of Clients without a BirthDate. (37 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT FirstName, LastName, BirthDate\
+FROM Client\
+WHERE BirthDate IS NULL; \
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 14\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select the Name of each ExerciseCategory that has a parent (ParentCategoryId value is not null). (12 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT Name, ParentCategoryId\
+FROM ExerciseCategory\
+WHERE ParentCategoryId IS NOT NULL; \
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 15\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select Name and Notes of each level 3 Workout that contains the word 'you' in its Notes. (4 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT Name, Notes\
+FROM Workout\
+WHERE Notes LIKE '%you%' \
+AND LevelID = '3'; \
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 16\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select FirstName, LastName, City from Client whose LastName starts with L,M, or N and who live in LaPlace. (5 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT FirstName, LastName, City\
+FROM Client\
+WHERE (LastName LIKE 'L%' OR\
+LastName LIKE 'M%' OR\
+LastName LIKE 'N%') AND City = 'LaPlace' ; \
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 17\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Select InvoiceId, Description, Price, Quantity, ServiceDate and the line item total, a calculated value, from InvoiceLineItem, where the line item total is between 15 and 25 dollars. (667 rows)\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT\'a0 InvoiceId, Description, Price, Quantity, Price * Quantity AS line_item_total\'a0 \
+FROM InvoiceLineItem \
+WHERE Price * Quantity BETWEEN 15 AND 25;\
+\'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 18\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 Does the database include an email address for the Client, Estrella Bazely?\
+This requires two queries:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Select a Client record for Estrella Bazely. Does it exist?
+\f2 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Client c\
+WHERE FirstName LIKE 'Estrella' AND LastName LIKE 'Bazely';\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 \'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+If it does, select a Login record that matches its ClientId.
+\f2 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Login\
+WHERE ClientID = '87976c42-9226-4bc6-8b32-23a8cd7869a5';\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 --------------------------------\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT *\
+FROM Client c\
+JOIN Login l\
+\pard\pardeftab720\li1440\partightenfactor0
+\cf5 ON c.ClientId = l.ClientId\
+\pard\pardeftab720\li720\partightenfactor0
+\cf5 WHERE FirstName LIKE 'Estrella' AND LastName LIKE 'Bazely';\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 \'a0\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f0\fs42\fsmilli21333 \cf2 Activity 19\
+\pard\pardeftab720\li720\partightenfactor0
+
+\f1\fs32 \cf4 What are the Goals of the Workout with the Name 'This Is Parkour'?\
+You need three queries!\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0\cf4 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Select the WorkoutId from Workout where Name equals 'This Is Parkour'. (1 row)
+\f2 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT WorkoutID, Name\
+FROM Workout w\
+WHERE Name LIKE 'This Is Parkour';\
+\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls5\ilvl0
+\f1\fs32 \cf4 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Select GoalId from WorkoutGoal where the WorkoutId matches the WorkoutId from your first query. (3 rows)
+\f2 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT GoalID\
+FROM WorkoutGoal\
+WHERE WorkoutID LIKE 12;\
+\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls6\ilvl0
+\f1\fs32 \cf4 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Select the goal name from Goal where the GoalId is one of the GoalIds from your second query. (3 rows)
+\f2 \
+\pard\pardeftab720\li720\partightenfactor0
+
+\fs29\fsmilli14667 \cf5 USE PersonalTrainer;\
+SELECT Name\
+FROM Goal\
+WHERE GoalID LIKE 3 OR \
+\pard\pardeftab720\li1440\partightenfactor0
+\cf5 \'a0\'a0\'a0 GoalID LIKE 8 OR \
+\pard\pardeftab720\li720\partightenfactor0
+\cf5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 GoalID LIKE 15;\
+}
