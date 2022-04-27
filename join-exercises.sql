@@ -110,21 +110,50 @@ LEFT OUTER JOIN Login l  -- This Left Outer Join means c.ClientId can be null an
 -- Select ExerciseCategory.Name and its parent ExerciseCategory's Name.
 -- This requires a self-join.
 -- 12 rows
+SELECT ec.name AS Category, e.name AS ParentCategory
+FROM ExerciseCategory ec
+JOIN ExerciseCategory e
+ON ec.ExerciseCategoryId = e.ParentCategoryId;
 --------------------
     
 -- Rewrite the query above so that every ExerciseCategory.Name is
 -- included, even if it doesn't have a parent.
 -- 16 rows
+
+SELECT ec.name AS Category, e.name AS ParentCategory
+FROM ExerciseCategory ec
+-- Right Outer Joins means the right condition doesn't have to be true 
+RIGHT OUTER JOIN ExerciseCategory e 
+ON ec.ExerciseCategoryId = e.ParentCategoryId;
 --------------------
     
 -- Are there Clients who are not signed up for a Workout?
 -- 50 rows
+SELECT c.FirstName, c.LastName
+FROM Client c 
+LEFT OUTER JOIN ClientWorkout cw
+	ON c.ClientId = cw.ClientId
+	WHERE cw.ClientId IS NULL;
 --------------------
 
 -- Which Beginner-Level Workouts satisfy at least one of Shell Creane's Goals?
 -- Goals are associated to Clients through ClientGoal.
 -- Goals are associated to Workouts through WorkoutGoal.
 -- 6 rows, 4 unique rows
+SELECT c.FirstName, c.LastName, g.GoalId, g.Name, w.LevelId, w.WorkoutId, w.Name ,w.Notes
+FROM Client c
+JOIN ClientGoal cg
+	ON c.ClientId = cg.ClientId
+JOIN Goal g
+	ON cg.GoalId = g.GoalId
+JOIN WorkoutGoal wg
+	ON wg.GoalId = g.GoalId
+JOIN Workout w
+	ON w.WorkoutId = wg.WorkoutId
+WHERE w.LevelId = '1'
+AND c.FirstName LIKE 'Shell'
+AND c.LastName LIKE 'Creane';
+;
 --------------------
 
 -- Select all Workouts. 
@@ -133,6 +162,14 @@ LEFT OUTER JOIN Login l  -- This Left Outer Join means c.ClientId can be null an
 -- If you filter on Goal.Name in a WHERE clause, Workouts will be excluded.
 -- Why?
 -- 26 Workouts, 3 Goals
+
+SELECT w.WorkoutId, w.Name , g.Name
+FROM Workout w
+LEFT OUTER JOIN WorkoutGoal wg
+	ON wg.WorkoutId = w.WorkoutId
+    AND wg.GoalId = '10'
+LEFT OUTER JOIN Goal g
+	ON g.GoalId = wg.GoalId
 --------------------
 
 -- The relationship between Workouts and Exercises is... complicated.
@@ -144,6 +181,17 @@ LEFT OUTER JOIN Login l  -- This Left Outer Join means c.ClientId can be null an
 -- laps, etc...) 
 -- which finally links to Exercise.
 -- Select Workout.Name and Exercise.Name for related Workouts and Exercises.
+
+SELECT w.Name, e.Name
+FROM Workout w
+JOIN WorkoutDay wd
+	ON w.WorkoutId = wd.WorkoutId
+JOIN WorkoutDayExerciseInstance wdei
+	ON wd.WorkoutDayId = wdei.WorkoutDayId
+JOIN ExerciseInstance ei
+	ON wdei.ExerciseInstanceId = ei.ExerciseInstanceId
+JOIN Exercise e
+	ON ei.ExerciseId = e.ExerciseId
 --------------------
    
 -- An ExerciseInstance is configured with ExerciseInstanceUnitValue.
@@ -154,4 +202,13 @@ LEFT OUTER JOIN Login l  -- This Left Outer Join means c.ClientId can be null an
 -- How many Planks are configured, which Units apply, and what 
 -- are the configured Values?
 -- 4 rows, 1 Unit, and 4 distinct Values
+SELECT e.Name, eiuv.Value, u.Name
+FROM ExerciseInstance ei
+JOIN ExerciseInstanceUnitValue eiuv
+	ON ei.ExerciseInstanceId = eiuv.ExerciseInstanceId
+JOIN Unit u
+	ON eiuv.UnitId = u.UnitId
+JOIN Exercise e
+	ON ei.ExerciseId = e.ExerciseId
+	WHERE e.Name LIKE 'Plank'
 --------------------
