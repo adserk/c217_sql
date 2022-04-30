@@ -1,4 +1,5 @@
 -- Part 4: Query the Database
+
 -- 1. Write a query that returns a list of reservations 
 -- that end in July 2023, including the name of the guest, the room number(s), and the reservation dates.
 
@@ -17,6 +18,7 @@ JOIN RoomNumber rn
 	ON r.RoomNumberId = rn.RoomNumberId
 WHERE r.EndDate < '2023-07-31'
 
+-------------------------------------------------
 
 -- 2. Write a query that returns a list of all 
 -- reservations for rooms with a jacuzzi, displaying the guest's name, 
@@ -39,6 +41,8 @@ JOIN Amenities a
 	ON rn.AmenitiesId = a.AmenitiesId
 WHERE Amenities LIKE '%Jacuzzi'
 
+------------------------------------
+
 -- 3. Write a query that returns all the rooms reserved for a specific guest, 
 -- including the guest's name, the room(s) reserved, the starting 
 -- date of the reservation, and how many people were included in the reservation. 
@@ -60,8 +64,8 @@ JOIN RoomNumber rn
 JOIN Amenities a
 	ON rn.AmenitiesId = a.AmenitiesId
 WHERE g.FirstName = "Mack" AND g.LastName = "Simmer"
--- JOIN RoomType rt
--- 	ON r.RoomtypeId = rt.RoomTypeId 
+
+---------------------------------------------
 
 -- 4. Write a query that returns a list of rooms, reservation ID, and per-room cost for each reservation. 
 -- The results should include all rooms, whether or not there is a reservation associated with the room.
@@ -98,8 +102,36 @@ JOIN Amenities a
 
 ORDER BY StartDate;
 
+---------------------------
+
+-- 4a. This query shows the Total Room Cost (including amenities) 
+-- before any reservation 
+USE HotelData;
+SELECT 
+rn.RoomNumber AS `Room Number`, 
+a.Amenities, 
+rp.BasePrice AS `Base Price`,
+CASE WHEN a.Amenities LIKE '%Jacuzzi' THEN '25' ELSE '0' END AS `JacuzziPrice`,
+(SELECT (`JacuzziPrice`+rp.BasePrice)) AS `TotalRoomCost`
+
+FROM Guest g
+JOIN Reservation r
+	ON g.GuestId = r.GuestId
+JOIN RoomNumber rn
+	ON r.RoomNumberId = rn.RoomNumberId
+JOIN RoomPrice rp
+	ON r.RoomPriceId = rp.RoomPriceId
+JOIN RoomType rt
+	ON r.RoomTypeId = rt.RoomTypeId
+JOIN Amenities a
+	ON a.AmenitiesId = rn.AmenitiesId
+ORDER BY rn.RoomNumber;
+
+---------------------------------------------
+
 -- 5. Write a query that returns all the rooms accommodating at least 
 -- three guests and that are reserved on any date in April 2023.
+-- (In this data there's no reservation with more than 3 guests AND in April 2023)
 USE HotelData;
 SELECT 
 r.ReservationId AS `Reservation ID`, 
@@ -118,7 +150,9 @@ JOIN Amenities a
 	ON rn.AmenitiesId = a.AmenitiesId
 WHERE (r.Adults + r.Children) >= 3 AND 
 (r.StartDate BETWEEN '2023-04-01' AND '2023-04-30') 
--- In this data there's no reservation with more than 3 guests AND in April 2023
+
+
+---------------------------------------------
 
 -- 6. Write a query that returns a list of all guest names and the number of reservations 
 -- per guest, sorted starting with the guest with the most reservations and then by the guest's last name.
@@ -134,6 +168,8 @@ JOIN RoomNumber rn
 	ON r.RoomNumberId = rn.RoomNumberId
 GROUP BY r.GuestId
 ORDER BY COUNT(r.GuestId) DESC, g.LastName;
+
+---------------------------------------------
 
 -- 7. Write a query that displays the name, address, and phone number of 
 -- a guest based on their phone number. (Choose a phone number from the existing data.)
