@@ -159,7 +159,7 @@ WHERE (r.Adults + r.Children) >= 3 AND
 USE HotelData;
 SELECT r.GuestId,
 g.FirstName, g.LastName,
-COUNT(r.GuestId) AS reservation_count
+COUNT(r.GuestId) AS `Number of Reservations`
 
 FROM Guest g
 JOIN Reservation r
