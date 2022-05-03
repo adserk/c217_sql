@@ -85,7 +85,7 @@ DATEDIFF(r.EndDate, r.StartDate) AS `Days Reserved`,
 rp.BasePrice,
 CASE WHEN a.Amenities LIKE '%Jacuzzi' THEN '25' ELSE '0' END AS `JacuzziPrice`,
 CASE WHEN r.Adults-rt.StandardOccupancy > 0 THEN r.Adults-rt.StandardOccupancy ELSE 0 END AS `Extra Person`,
-CASE WHEN r.Adults-rt.StandardOccupancy > 0 THEN 10*(r.Adults-rt.StandardOccupancy) ELSE 0 END AS `Extra Person Price`,
+CASE WHEN r.Adults-rt.StandardOccupancy > 0 THEN rp.ExtraPerson*(r.Adults-rt.StandardOccupancy) ELSE 0 END AS `Extra Person Price`,
 -- Need to use extra parenthesise to call on 'CASE WHEN' columns
 (SELECT (`Extra Person Price`+`JacuzziPrice`+rp.BasePrice)*(`Days Reserved`)) AS `TotalRoomCost`
 FROM Guest g
@@ -100,7 +100,7 @@ JOIN RoomType rt
 JOIN Amenities a
 	ON a.AmenitiesId = rn.AmenitiesId
 
-ORDER BY StartDate;
+ORDER BY EndDate;
 
 ---------------------------
 
